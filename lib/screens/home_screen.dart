@@ -5,6 +5,7 @@ import '../models/beliscada.dart';
 import '../services/storage_service.dart';
 import '../services/notification_service.dart';
 import 'settings_screen.dart';
+import 'exames_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -150,6 +151,15 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         actions: [
           IconButton(
+            icon: const Icon(Icons.biotech_outlined),
+            tooltip: 'Exames',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const ExamesScreen()),
+              );
+            },
+          ),
             icon: const Icon(Icons.settings_outlined),
             onPressed: () async {
               await Navigator.push(
